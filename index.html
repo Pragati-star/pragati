@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Italianno&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+			integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+			crossorigin="anonymous"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,400;0,600;0,700;1,100&display=swap"
+			rel="stylesheet"
+		/>
+
+		<link
+			href="https://www.jqueryscript.net/css/jquerysctipttop.css"
+			rel="stylesheet"
+			type="text/css"
+		/>
+
+		<link rel="stylesheet" type="text/css" href="style.css" />
+
+		<title>Booking-System</title>
+	</head>
+	<body id="body">
+		<header>
+			<div class="navbar" id="navbar">
+				<div class="container">
+					<div class="logo-base" id="logo-base" onclick="getHome()">
+						<i class="fas fa-film"></i>
+						<span class="films">Films</span>
+					</div>
+					<ul class="nav" id="nav">
+						<li>
+							<a href="#" class="navElement" id="navElement" onclick="getHome()"
+								>Home</a
+							>
+						</li>
+						<li>
+							<a
+								href="#"
+								class="navElement"
+								id="navElement"
+								onclick="getAbout()"
+								>About</a
+							>
+						</li>
+						<li class="button button-book">
+							<a href="#" class="navElement" onclick="getBook()">Book Now</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</header>
+
+		<div id="content">
+			<div class="main_container" id="home">
+				<div class="showcase">
+					<div class="slideshow">
+						<div class="banner">
+							<div class="offers">
+								<img src="./offer banner.svg" alt="" />
+								<div class="button-banner">
+									<div class="button_text" onclick="getBook()">Book Now</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+				<script src="swiper.js"></script>
+
+				<div class="movie_listing">
+					<h1 class="secondpage_title">movies</h1>
+					<div class="secondpage">
+						<div class="movie_detail">
+							<div class="movie_list">
+								<div class="row">
+									<div class="box item-1" onclick="showItem1()">
+										<div class="movie_block" id="t1"></div>
+									</div>
+									<div class="box item-2" onclick="showItem2()">
+										<div class="movie_block" id="t2"></div>
+									</div>
+									<div class="box item-3" onclick="showItem3()">
+										<div class="movie_block" id="t3"></div>
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="box item-4" onclick="showItem4()">
+										<div class="movie_block" id="t4"></div>
+									</div>
+									<div class="box item-5" onclick="showItem5()">
+										<div class="movie_block" id="t5"></div>
+									</div>
+									<div class="box item-6" onclick="showItem6()">
+										<div class="movie_block" id="t6"></div>
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="box item-7" onclick="showItem7()">
+										<div class="movie_block" id="t7"></div>
+									</div>
+									<div class="box item-8" onclick="showItem8()">
+										<div class="movie_block" id="t8"></div>
+									</div>
+									<div class="box item-9" onclick="showItem9()">
+										<div class="movie_block" id="t9"></div>
+									</div>
+								</div>
+							</div>
+
+							<div class="movie_content">
+								<div class="movie_title" id="movie_title"></div>
+								<div class="movie_poster" id="movie_poster"></div>
+								<div class="movie_about">
+									<span class="movie_description">Description :</span>
+									<p id="description"></p>
+								</div>
+								<div
+									class="button button_inside_content"
+									onclick="getBook()"
+									id="button_function"
+								>
+									<span class="for_gradient" id="openclose_button"
+										>Book Now</span
+									>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="thirdpage">
+					<div class="third_container">
+						<div class="content">
+							<div class=".time_table">
+								<table>
+									<tr>
+										<th>Movie Name</th>
+										<th>Showing Time</th>
+									</tr>
+									<tr class="for_gradient">
+										<td id="name1"></td>
+										<td id="time1"></td>
+									</tr>
+									<tr>
+										<td id="name2"></td>
+										<td id="time2"></td>
+									</tr>
+									<tr>
+										<td id="name3"></td>
+										<td id="time3"></td>
+									</tr>
+									<tr>
+										<td id="name4"></td>
+										<td id="time4"></td>
+									</tr>
+									<tr>
+										<td id="name5"></td>
+										<td id="time5"></td>
+									</tr>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="invisible" id="about">
+				<div class="about_container">
+					<h1 class="about_head">Developers</h1>
+					<div class="person_info">
+						<div class="photo_container">
+							<div class="photoWrapper">
+								<div class="photo" id="photo1"></div>
+							</div>
+						</div>
+						<div class="wrapperInPersonalDetail">
+							<div class="about_person" id="about_person1"></div>
+							<div class="social_media">
+								<li><a onclick="li1()" class="fab fa-linkedin"></a></li>
+								<li><a onclick="tw1()" class="fab fa-twitter"></a></li>
+								<li><a onclick="in1()" class="fab fa-instagram"></a></li>
+								<li><a onclick="em1()" class="far fa-envelope"></a></li>
+							</div>
+						</div>
+					</div>
+					<div class="person_info">
+						<div class="photo_container">
+							<div class="photoWrapper">
+								<div class="photo" id="photo2"></div>
+							</div>
+						</div>
+						<div class="wrapperInPersonalDetail">
+							<div class="about_person" id="about_person2"></div>
+							<div class="social_media">
+								<li><a onclick="li2()" class="fab fa-linkedin"></a></li>
+								<li><a onclick="tw2()" class="fab fa-twitter"></a></li>
+								<li><a onclick="in2()" class="fab fa-instagram"></a></li>
+								<li><a onclick="em2()" class="far fa-envelope"></a></li>
+							</div>
+						</div>
+					</div>
+					<div class="person_info">
+						<div class="photo_container">
+							<div class="photoWrapper">
+								<div class="photo" id="photo3"></div>
+							</div>
+						</div>
+						<div class="wrapperInPersonalDetail">
+							<div class="about_person" id="about_person3"></div>
+							<div class="social_media">
+								<li><a onclick="li3()" class="fab fa-linkedin"></a></li>
+								<li><a onclick="tw3()" class="fab fa-twitter"></a></li>
+								<li><a onclick="in3()" class="fab fa-instagram"></a></li>
+								<li><a onclick="em3()" class="far fa-envelope"></a></li>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="invisible" id="book">
+				<div class="book_container">
+					<div class="user_data" id="user_data">
+						<h1>Book Now</h1>
+						<div class="inner_book_container">
+							<input
+								type="text"
+								name="name"
+								id="name"
+								placeholder="Full Name "
+							/>
+							<input
+								type="email"
+								name="email"
+								id="email"
+								placeholder="Email "
+							/>
+							<input
+								type="text"
+								name="number"
+								id="number"
+								placeholder="Number"
+							/>
+							<input
+								type="text"
+								name="address"
+								id="address"
+								placeholder="Address"
+							/>
+							<span class="confirm_button" onclick="on_confirm_user_data()">
+								Next
+							</span>
+						</div>
+					</div>
+
+					<div class="invisible" id="seat_booking_page">
+						<div class="seat_booking_container">
+							<div class="movies_for_booking">
+								<div onclick="showMv1()" class="mv_box" id="mv1"></div>
+								<div onclick="showMv2()" class="mv_box" id="mv2"></div>
+								<div onclick="showMv3()" class="mv_box" id="mv3"></div>
+								<div onclick="showMv4()" class="mv_box" id="mv4"></div>
+								<div onclick="showMv5()" class="mv_box" id="mv5"></div>
+							</div>
+							<h1 id="Mv_name"></h1>
+							<h3 id="select_seat">Select your seats:</h3>
+							<div class="seats_container" id="seats_container">
+								<div class="right_side">
+									<div class="line">
+										<div onclick="addseats('A11')" class="seat" id="A11">
+											A11
+										</div>
+										<div onclick="addseats('A12')" class="seat" id="A12">
+											A12
+										</div>
+										<div onclick="addseats('A13')" class="seat" id="A13">
+											A12
+										</div>
+										<div onclick="addseats('A14')" class="seat" id="A14">
+											A12
+										</div>
+										<div onclick="addseats('A15')" class="seat" id="A15">
+											A12
+										</div>
+									</div>
+									<div class="line">
+										<div onclick="addseats('A21')" class="seat" id="A21">
+											A21
+										</div>
+										<div onclick="addseats('A22')" class="seat" id="A22">
+											A22
+										</div>
+										<div onclick="addseats('A23')" class="seat" id="A23">
+											A23
+										</div>
+										<div onclick="addseats('A24')" class="seat" id="A24">
+											A24
+										</div>
+										<div onclick="addseats('A25')" class="seat" id="A25">
+											A25
+										</div>
+									</div>
+									<div class="line">
+										<div onclick="addseats('A31')" class="seat" id="A31">
+											A31
+										</div>
+										<div onclick="addseats('A32')" class="seat" id="A32">
+											A32
+										</div>
+										<div onclick="addseats('A33')" class="seat" id="A33">
+											A33
+										</div>
+										<div onclick="addseats('A34')" class="seat" id="A34">
+											A34
+										</div>
+										<div onclick="addseats('A35')" class="seat" id="A35">
+											A35
+										</div>
+									</div>
+									<div class="line">
+										<div onclick="addseats('A41')" class="seat" id="A41">
+											A41
+										</div>
+										<div onclick="addseats('A42')" class="seat" id="A42">
+											A42
+										</div>
+										<div onclick="addseats('A43')" class="seat" id="A43">
+											A43
+										</div>
+										<div onclick="addseats('A44')" class="seat" id="A44">
+											A44
+										</div>
+										<div onclick="addseats('A45')" class="seat" id="A45">
+											A45
+										</div>
+									</div>
+									<div class="line">
+										<div onclick="addseats('A51')" class="seat" id="A51">
+											A51
+										</div>
+										<div onclick="addseats('A52')" class="seat" id="A52">
+											A52
+										</div>
+										<div onclick="addseats('A53')" class="seat" id="A53">
+											A53
+										</div>
+										<div onclick="addseats('A54')" class="seat" id="A54">
+											A54
+										</div>
+										<div onclick="addseats('A55')" class="seat" id="A55">
+											A55
+										</div>
+									</div>
+								</div>
+								<div class="left_side">
+									<div class="line">
+										<div onclick="addseats('B11')" class="seat" id="B11">
+											B11
+										</div>
+										<div onclick="addseats('B12')" class="seat" id="B12">
+											B12
+										</div>
+										<div onclick="addseats('B13')" class="seat" id="B13">
+											B12
+										</div>
+										<div onclick="addseats('B14')" class="seat" id="B14">
+											B12
+										</div>
+										<div onclick="addseats('B15')" class="seat" id="B15">
+											B12
+										</div>
+									</div>
+									<div class="line">
+										<div onclick="addseats('B21')" class="seat" id="B21">
+											B21
+										</div>
+										<div onclick="addseats('B22')" class="seat" id="B22">
+											B22
+										</div>
+										<div onclick="addseats('B23')" class="seat" id="B23">
+											B23
+										</div>
+										<div onclick="addseats('B24')" class="seat" id="B24">
+											B24
+										</div>
+										<div onclick="addseats('B25')" class="seat" id="B25">
+											B25
+										</div>
+									</div>
+									<div class="line">
+										<div onclick="addseats('B31')" class="seat" id="B31">
+											B31
+										</div>
+										<div onclick="addseats('B32')" class="seat" id="B32">
+											B32
+										</div>
+										<div onclick="addseats('B33')" class="seat" id="B33">
+											B33
+										</div>
+										<div onclick="addseats('B34')" class="seat" id="B34">
+											B34
+										</div>
+										<div onclick="addseats('B35')" class="seat" id="B35">
+											B35
+										</div>
+									</div>
+									<div class="line">
+										<div onclick="addseats('B41')" class="seat" id="B41">
+											B41
+										</div>
+										<div onclick="addseats('B42')" class="seat" id="B42">
+											B42
+										</div>
+										<div onclick="addseats('B43')" class="seat" id="B43">
+											B43
+										</div>
+										<div onclick="addseats('B44')" class="seat" id="B44">
+											B44
+										</div>
+										<div onclick="addseats('B45')" class="seat" id="B45">
+											B45
+										</div>
+									</div>
+									<div class="line">
+										<div onclick="addseats('B51')" class="seat" id="B51">
+											B51
+										</div>
+										<div onclick="addseats('B52')" class="seat" id="B52">
+											B52
+										</div>
+										<div onclick="addseats('B53')" class="seat" id="B53">
+											B53
+										</div>
+										<div onclick="addseats('B54')" class="seat" id="B54">
+											B54
+										</div>
+										<div onclick="addseats('B55')" class="seat" id="B55">
+											B55
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<span class="confirm_button" onclick="finalConfirm()">
+							confirm
+						</span>
+					</div>
+					<div class="invisible" id="thanks_page">
+						<div class="thanks_page_container">
+							<h2>
+								!!!! Dear <span id="userName"></span>, your ticket for
+								<span class="ticket" id="selectedMovie">moviename</span>
+								film has been confirmed !!!!
+							</h2>
+							<h2>Your seats are : <span id="seat_choosed"></span></h2>
+							<h2>!!!! Thanks for visiting us !!!!</h2>
+							<span class="confirm_button" onclick="getHome()">
+								Go to home
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="footer">
+			<div class="footer_logo">
+				<div class="logo_footer_base">
+					<div class="logo-base">
+						<i class="fas fa-film"></i>
+						<span class="films">Films</span>
+					</div>
+				</div>
+
+				<div class="about_system">
+					This platform is running under the K20KK Films group. The maintenance
+					and updation is done by the group members of K20KK Aashish Bhandari,
+					Harshin Manshoor, and Pragati Thakur. Thanks for Visiting Us.
+				</div>
+			</div>
+			<div class="details">
+				<div class="join_withUs">Stay Connected With Us :</div>
+				<div class="social_media">
+					<li><a class="fab fa-linkedin"></a></li>
+					<li><a class="fab fa-twitter"></a></li>
+					<li><a class="fab fa-instagram"></a></li>
+					<li><a class="far fa-envelope"></a></li>
+				</div>
+			</div>
+			<div class="copyright">
+				Copyright © K20KK-Films 2021. All Rights Reserved!
+			</div>
+		</div>
+
+		<script src="script.js"></script>
+	</body>
+</html>
