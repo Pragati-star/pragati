@@ -1,1 +1,1 @@
-# pragati
+# Movie Booking Management System
